@@ -5,6 +5,20 @@
 /.pnp
 .pnp.js
 
+/my_templates
+
+# config
+/src/config
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
 # testing
 /coverage
 

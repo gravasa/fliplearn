@@ -1,13 +1,641 @@
+html {
+  min-height: 100%;
+  /* min-width: 100%; */
+}
 body {
+  font-family: "Ubuntu", sans-serif;
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  min-height: 100%;
+  /* min-width: 100%; */
+
+  background: #41567a;
+  background: -moz-linear-gradient(
+    45deg,
+    #41567a 0%,
+    #749edb 51%,
+    #4e6993 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #41567a 0%,
+    #749edb 51%,
+    #4e6993 100%
+  );
+  background: linear-gradient(45deg, #41567a 0%, #749edb 51%, #4e6993 100%);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
 }
+footer {
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 10px;
+}
+
+p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  color: rgb(38, 46, 56) !important;
+}
+
+input,
+textarea {
+  color: aliceblue;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  font-size: 1.4rem !important;
+}
+
+border-bottom input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-color: #ffbb00;
+  box-shadow: none;
+}
+
+.btn:not(.btn-floating) {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  border-radius: 4px;
+  /* color: rgb(195, 221, 248) !important; */
+  color: rgb(48, 58, 70) !important;
+}
+.btn:not(.btn-floating):hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* WELCOME PAGE */
+
+.welcome-container {
+  height: 100%;
+  width: 100%;
+}
+
+.welcome-text {
+  font-family: "Luckiest Guy", cursive;
+  color: rgb(255, 255, 255) !important;
+  font-size: 50px;
+  margin: 40px 0 0 30px !important;
+  /* font-size: 3.5vw;
+  font-size: 8vh; */
+}
+.flip {
+  color: #fb6542;
+}
+.learn {
+  color: #486b00;
+}
+.and-sign {
+  color: #ffbb00;
+}
+
+.welcome-img-container {
+  margin-top: 60px;
+  width: 100%;
+}
+.welcome-img {
+  position: relative;
+  width: 900px;
+  overflow: hidden;
+  right: 10%;
+}
+
+.welcome-btn {
+  display: block;
+  width: 510px;
+  margin: 30px 0 30px 16%;
+  height: 50px;
+  background-color: #7295c9;
+  color: #41567a !important;
+  font-size: 17px;
+  padding-top: 5px;
+}
+.welcome-btn:hover {
+  background-color: #9dadc5;
+}
+
+/* SIGN IN  &  SIGN UP */
+
+.signin-form {
+  background: transparent;
+  margin-top: 100px;
+  line-height: 5rem !important;
+  color: aliceblue;
+}
+.signin-container {
+  width: 60%;
+}
+.signin-container label {
+  color: rgb(92, 88, 69) !important;
+}
+
+.login-btn {
+  background-color: #598234;
+  height: 45px;
+  margin-top: 40px;
+}
+.login-btn:hover {
+  background-color: #71a345;
+}
+
+/* NAVBAR */
+.nav-container {
+  height: 90px;
+}
+nav {
+  background-color: #ffbb00;
+  font-family: "Luckiest Guy", cursive;
+  height: 90px;
+  line-height: 90px;
+}
+/* styles for hide and show navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+.navbar--hidden {
+  top: -50px;
+}
+/* --- */
+
+nav a {
+  color: rgb(48, 58, 70) !important;
+}
+.nav-btn-container {
+  display: inline;
+  position: relative;
+  right: 30%;
+}
+.nav-btn {
+  padding-top: 4px !important;
+  font-size: 1.3rem !important;
+}
+.nav-btn:hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* CREATE button on nav bar */
+
+.nav-create-btn {
+  background-color: #68993e;
+  margin-right: 50px !important;
+  /*  */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 80% !important;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.nav-create-btn:after {
+  content: "";
+  background: #9cad8d !important;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -30px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.nav-create-btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.nav-create-btn:hover {
+  background-color: #7bb448 !important;
+}
+.nav-create-btn:focus {
+  transition: all 0s;
+  background-color: #68993e !important;
+}
+
+/* RANDOM button on nav bar */
+
+.nav-random-btn {
+  background-color: #dd6262 !important;
+  margin-right: 100px;
+  /*  */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 90% !important;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+.nav-random-btn:hover {
+  background-color: #db6d6d !important;
+}
+
+.nav-random-btn:after {
+  content: "";
+  background: #db8989 !important;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -30px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.nav-random-btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.nav-random-btn:focus {
+  transition: all 0s;
+  background-color: #dd6262 !important;
+}
+/*  */
+
+.brand-logo {
+  height: 100%;
+  margin: 10px;
+}
+.profile-icon {
+  font-size: 25px !important;
+  background-color: #fc6436;
+  color: #506c96 !important;
+  border-radius: 73% 27% 60% 40% / 55% 60% 40% 45%;
+  height: 65px !important;
+  width: 65px !important;
+  margin-right: 40px !important;
+  padding-top: 15px !important;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  /*  */
+}
+.profile-icon:hover {
+  background-color: #fc6436;
+}
+.profile-icon:focus {
+  background-color: #fc6436;
+}
+
+.dropdown-content {
+  width: 200px !important;
+  top: 0 !important;
+  left: auto !important;
+  right: 0px !important;
+  padding-top: 30px !important;
+  background-color: #ffcb3df5;
+  opacity: 1 !important;
+  /* border: 3px solid #7a8492; */
+  border-radius: 4px;
+}
+.dropdown-content .profile-icon {
+  padding-top: 25px !important;
+}
+.dropdown-content li:hover {
+  background-color: transparent !important;
+}
+.dropdown-content li {
+  background: transparent;
+  cursor: default;
+  padding-left: 5px;
+}
+.dropdown-content a {
+  text-align: right;
+}
+.dropdown-content .divider {
+  background-color: white;
+}
+
+/* SignedOutLinks */
+
+.signed-out {
+  margin-right: 50px;
+}
+.signin-link a {
+  font-size: 1.3rem !important;
+  padding: 0 20px;
+}
+
+/* SIDE NAV */
+
+.side-bar {
+  height: 100%;
+  background-color: rgba(252, 200, 57);
+  font-family: "Luckiest Guy", cursive;
+}
+.side-bar a {
+  color: rgb(48, 58, 70) !important;
+}
+.name {
+  font-size: 1.5em !important;
+}
+.email {
+  font-size: 1.1em !important;
+}
+.side-bar .profile-icon {
+  margin-right: 40px !important;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  color: #506c96 !important;
+  transition: none;
+  cursor: default;
+}
+
+.side-bar .profile-icon:hover {
+  background-color: #fc6436 !important;
+}
+
+.side-bar-buttons {
+  margin-top: 70px !important;
+}
+
+.sidenav-brand-logo {
+  width: 200px;
+  position: absolute;
+  bottom: 50px;
+  left: 25%;
+}
+
+.sidenav .nav-btn {
+  margin-bottom: 20px !important;
+  margin-right: 15px !important;
+  width: 90% !important;
+}
+
+i.material-icons {
+  padding: 10px 5px 0 0;
+  font-size: 36px !important;
+}
+
+/* DASHBOARD */
+.dashboard {
+  width: 90%;
+}
+
+/* CARD LIST */
+
+/* .card-list {
+  position: relative;
+  margin-top: 80px;
+} */
+
+/* CARD SUMMARY */
+
+.col {
+  padding-right: 20px !important;
+  background: transparent !important;
+}
+
+.card {
+  background: transparent;
+
+  padding: 0;
+  height: 260px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  perspective: 600px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.card-stacked {
+  background: transparent;
+
+  position: relative !important;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card-stacked.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg) !important;
+}
+
+.card-content {
+  border-radius: 10px !important;
+  position: absolute !important;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 10px !important;
+}
+.card-content.front {
+  background-color: #e0704d;
+}
+.card-content.back {
+  background-color: #598234;
+  transform: rotateY(180deg) !important;
+}
+
+.card-text.front-text {
+  height: 87%;
+  width: 100%;
+  margin-top: 0;
+  display: table;
+  font-size: 165%;
+  color: rgb(34, 42, 51) !important;
+}
+.card-text.back-text {
+  font-size: 135%;
+  height: 87%;
+  width: 100%;
+  display: table;
+
+  /* text-align: center; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* overflow-y: auto; */
+  color: rgb(34, 42, 51) !important;
+}
+
+.front-text p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.back-text p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.card-content:hover {
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.edit-icon {
+  padding: 0 !important;
+  color: #5478af !important;
+  margin-top: 0;
+}
+.edit-icon.back {
+  color: #e0b94d !important;
+}
+.edit-icon:hover {
+  color: #344b6e !important;
+}
+.edit-icon.back:hover {
+  color: #fdd76d !important;
+}
+
+/* CREATE CARD */
+
+.createcard-container,
+.editcard-container {
+  margin-top: 100px;
+  font-weight: 400;
+  background-color: #4169aa;
+  color: aliceblue;
+  border-radius: 4px;
+}
+
+.title-container {
+  padding-bottom: 30px;
+}
+.createcard-title {
+  color: #cc9d1a;
+  font-size: 2rem;
+}
+
+span.max-len {
+  font-size: 0.7rem;
+}
+.createbtn-container {
+  padding-top: 20px;
+  height: 80px;
+}
+
+.createbtn-container .btn {
+  width: 100%;
+}
+
+/* EDIT CARD */
+
+/* h5 for text that says "loading card..." */
+h5.loading {
+  font-family: "Luckiest Guy", cursive;
+  color: aliceblue !important;
+}
+
+.editcard-title {
+  color: #cc9d1a;
+  margin-bottom: 120px;
+  font-size: 2rem;
+}
+.editbtn-container {
+  position: relative;
+  padding-top: 30px;
+  width: 100%;
+  /* height: 100px; */
+}
+.btn.save {
+  background-color: #598234;
+}
+.btn.save:hover {
+  background-color: #71a345;
+}
+.btn.save:focus {
+  background-color: #598234;
+}
+.btn.cancel {
+  margin-left: 30px;
+  padding: 0 10px 0 10px;
+  background-color: #8a8f86b7;
+}
+
+.btn.cancel:focus {
+  background-color: #8a8f86b7;
+}
+.btn.delete {
+  height: 40px;
+  margin-top: 10px;
+  padding: 0 5px 0 5px;
+  background-color: #c25c5f;
+  /* background-color: #606959b7; */
+}
+
+/* RANDOM CARD */
+.random-card {
+  margin-top: 100px;
+}
+.random-btn {
+  position: relative;
+  background-color: #c25c5f !important;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100% !important;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+/* .random-btn:hover {
+  background-color: #d3c7c8;
+} */
+.random-btn:focus {
+  transition: all 0s;
+  background-color: #c25c5f !important;
+}
+.random-btn:after {
+  content: "";
+  background: #a0848d !important;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -30px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+.random-btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* .button {
+  position: relative;
+  border: none;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  
+  cursor: pointer;
+} */
