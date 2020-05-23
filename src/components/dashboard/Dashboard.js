@@ -27,5 +27,13 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "cards" }])
+  firestoreConnect( props => {
+    return [{ collection: "cards",
+        doc: `${props.auth.uid}`,
+        subcollections: [
+          { collection: 'userCards' }
+       ],
+       storeAs: 'cards',
+     }]
+   }) 
 )(Dashboard);
